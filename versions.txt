@@ -1,0 +1,8 @@
+VS Code 1.50.1
+C# extension (omnisharp) - 1.23.2
+Debugger for Unity - 2.7.5
+VS Code Unity Package - 1.2.2
+
+
+NDP471-DevPack-ENU.exe
+dotnet-sdk-5.0.301-win-x64.exe

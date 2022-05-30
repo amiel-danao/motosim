@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Custom/scenes/main_menu.unity
     guid: 7485555ee3db2f142bfdf2ca2e38def5
   - enabled: 1
-    path: Assets/ZRNAssets/005339_08932_25_14/Scenes/MotorScene1.unity
+    path: Assets/Custom/scenes/MotorScene1.unity
     guid: 5bf74f54890cfaa4c8600fdcfa4e51da
+  - enabled: 1
+    path: Assets/Custom/scenes/MotorScene2.unity
+    guid: a771dcac3c9f5674282a2994f3023484
+  - enabled: 1
+    path: Assets/Custom/scenes/MotorScene3.unity
+    guid: e26b6771815440c4484b9eee2593efb3
+  - enabled: 1
+    path: Assets/Custom/scenes/CheckParts.unity
+    guid: ad35210ee2f71ad4eafd9583865543f8
   m_configObjects: {}

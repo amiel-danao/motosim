@@ -7,13 +7,13 @@ using UnityEngine.Timeline;
 namespace CleverCrow.TimelineTest {
     public class DynamicDialoguePlayback : MonoBehaviour {
         public PlayableDirector director;
-        public PlayableAsset asset;
+        //public PlayableAsset asset;
 
         [Tooltip("Dialogue box index corresponds to the track the dialogue box will be assigned to")]
         public List<DialogueController> dialogueBoxes;
 
         private void Start () {
-            director.playableAsset = asset;
+            //director.playableAsset = asset;
             var timelineAsset = (TimelineAsset)director.playableAsset;
 
             for (var i = 0; i < dialogueBoxes.Count; i++) {
@@ -22,13 +22,7 @@ namespace CleverCrow.TimelineTest {
                 director.SetGenericBinding(track, dialogueBoxes[i]);
             }
 
-            director.Play(asset);
-        }
-
-        public void SetPlayableAsset(PlayableAsset asset){
-            director.initialTime = 0f;
-            this.asset = asset;
-            Start();
+            director.Play();
         }
     }
 }

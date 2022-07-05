@@ -20532,7 +20532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 630520683}
-  asset: {fileID: 11400000, guid: 49c3389eed237e64b8596ef5b4246fac, type: 2}
   dialogueBoxes:
   - {fileID: 1361936844}
 --- !u!320 &630520683
@@ -49514,7 +49513,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 83efe94f6ab1b844883bb2afe25bb532, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -49699,7 +49698,7 @@ MonoBehaviour:
   - {fileID: 1583806732}
   - {fileID: 630520683}
   _correctAsset:
-  - {fileID: 11400000, guid: 49c3389eed237e64b8596ef5b4246fac, type: 2}
+  - {fileID: 11400000, guid: 83efe94f6ab1b844883bb2afe25bb532, type: 2}
   - {fileID: 11400000, guid: 49c3389eed237e64b8596ef5b4246fac, type: 2}
   _wrongAsset:
   - {fileID: 11400000, guid: cff2d41e3ba951a42921779f424548a8, type: 2}

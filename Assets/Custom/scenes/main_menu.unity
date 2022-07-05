@@ -390,6 +390,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   _tips:
   - "<color=\"yellow\">1. Wear motorcycle gear.\r</color>\nProtect yourself from
     the elements, debris, and road rash with motorcycle gear. A LTO-approved helmet,
@@ -1076,7 +1077,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MotorScene3
+          m_StringArgument: MotorScene2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &227248393

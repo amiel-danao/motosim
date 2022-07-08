@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,20 +27,20 @@ public class MotorDetails : MonoBehaviour
     void Update()
     {
         var realSpeed = motorbikeController.GetComponent<Rigidbody>().velocity.magnitude*2;
-        t1.GetComponent<Text>().text = "Velocity [Km/h] : " + realSpeed;
+        t1.GetComponent<TMP_Text>().text = "Velocity [Km/h] : " + realSpeed;
         if(realSpeed>90)
-        t1.GetComponent<Text>().color = Color.red;
+        t1.GetComponent<TMP_Text>().color = Color.red;
         else
-        t1.GetComponent<Text>().color = Color.white;
+        t1.GetComponent<TMP_Text>().color = Color.white;
         var lean = motorbikeController.transform.eulerAngles.z<180?motorbikeController.transform.eulerAngles.z:motorbikeController.transform.eulerAngles.z-360;
-        t2.GetComponent<Text>().text = "Lean Angle [deg] : " + lean;
+        t2.GetComponent<TMP_Text>().text = "Lean Angle [deg] : " + lean;
         if(lean>40||lean<-40)
-        t2.GetComponent<Text>().color = Color.red;
+        t2.GetComponent<TMP_Text>().color = Color.red;
         else
-        t2.GetComponent<Text>().color = Color.white;
-        t3.GetComponent<Text>().text = "Control ω [rad⋅s−1] : " + motorbikeController.controlAngle;
-        t4.GetComponent<Text>().text = "Steer Angle [deg] : " + c1.GetComponent<WheelCollider>().steerAngle;
+        t2.GetComponent<TMP_Text>().color = Color.white;
+        t3.GetComponent<TMP_Text>().text = "Control ω [rad⋅s−1] : " + motorbikeController.controlAngle;
+        t4.GetComponent<TMP_Text>().text = "Steer Angle [deg] : " + c1.GetComponent<WheelCollider>().steerAngle;
         c2.GetComponent<WheelCollider>().GetGroundHit(out hit);
-        t5.GetComponent<Text>().text = "Rear Grip Force [N] : " + hit.force;
+        t5.GetComponent<TMP_Text>().text = "Rear Grip Force [N] : " + hit.force;
     }
 }

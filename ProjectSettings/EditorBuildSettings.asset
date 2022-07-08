@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Custom/scenes/CheckParts.unity
     guid: ad35210ee2f71ad4eafd9583865543f8
+  - enabled: 1
+    path: Assets/Custom/scenes/FreeRoam.unity
+    guid: 8542d98d7f61b88468e2ec484791817b
   m_configObjects: {}

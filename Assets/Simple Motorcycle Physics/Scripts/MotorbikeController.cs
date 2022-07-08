@@ -66,6 +66,8 @@ public class MotorbikeController : MonoBehaviour
     public Vector3 collisionRelativeVelocity;
 
     float turnAngle;
+    [SerializeField]
+    private MotorbikeInput input;
 
 
     public class WheelData
@@ -84,12 +86,14 @@ public class MotorbikeController : MonoBehaviour
         public float rotation = 0f;
     }
 
+    [System.Serializable]
     public struct MotorbikeInput
     {
         public float steer;
         public float acceleration;
         public float brakeForward;
         public float brakeBack;
+        public float reverse;
     }
 
     void Start()
@@ -117,9 +121,12 @@ public class MotorbikeController : MonoBehaviour
         if (!fallen)
         {
             uprightForce();
-            var input = new MotorbikeInput();
+            input = new MotorbikeInput();
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) input.acceleration = 1;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
+                input.acceleration = 1;
+                input.reverse = 0;
+            }
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) input.steer += 1;
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) input.steer -= 1;
 
@@ -127,7 +134,12 @@ public class MotorbikeController : MonoBehaviour
             {
                 input.brakeBack = 0.3f;
                 input.brakeForward = 0.5f;
+                input.reverse = 1;
             }
+            else{
+                input.reverse = 0;
+            }
+
             if (Input.GetKey(KeyCode.Space))
             {
                 input.brakeForward = 1f;
@@ -147,7 +159,10 @@ public class MotorbikeController : MonoBehaviour
         {
             Reset();
         }
+    }
 
+    void LateUpdate(){
+        Debug.Log(input.reverse);
     }
     void Awake()
     {
@@ -219,7 +234,7 @@ public class MotorbikeController : MonoBehaviour
         rb.angularDrag -= 100 * Time.deltaTime;
         rb.angularDrag = Mathf.Clamp(rb.angularDrag, 0.1f, 100);
 
-        if (speedVal < 1 && !Input.GetKey(KeyCode.W))
+        if (speedVal < 1 && input.reverse == 0 && !Input.GetKey(KeyCode.W))//!Input.GetKey(KeyCode.W) && Input.GetAxis("Vertical") > 0)
         {
 
             // var rot = Quaternion.FromToRotation(transform.up, Vector3.up);
@@ -255,21 +270,27 @@ public class MotorbikeController : MonoBehaviour
 
     private void motoMove(MotorbikeInput input)
     {
-        if (speedVal > 1)
-            WColForward.steerAngle = Mathf.Clamp(input.steer, -1, 1) * maxSteerAngle;
+        
+        if (input.reverse != 0){
+            if(speedVal < 1){
+                //rb.velocity = new Vector3(rb.velocity.x * (1 - ArtificialBrake / 10), rb.velocity.y, rb.velocity.z * (1 - ArtificialBrake / 10));
+                rb.AddForce(-transform.forward * ArtificialAcceleration * input.reverse);
+                Debug.Log("Reversing...");
+            }
+        }
         else
-            WColForward.steerAngle = Mathf.Clamp(input.steer, -speedVal, speedVal);
+        {
+            if (speedVal > 1)
+                WColForward.steerAngle = Mathf.Clamp(input.steer, -1, 1) * maxSteerAngle;
+            else
+                WColForward.steerAngle = Mathf.Clamp(input.steer, -speedVal, speedVal);
 
-        WColForward.brakeTorque = maxForwardBrake * input.brakeForward;
-        WColBack.brakeTorque = maxBackBrake * input.brakeBack;
-        WColBack.motorTorque = maxMotorTorque * input.acceleration;
-        if (speedVal < highSpeed)
-            rb.AddForce(transform.forward * ArtificialAcceleration * input.acceleration);
-
-        if (Input.GetAxis("Vertical") < 0)
-            rb.velocity = new Vector3(rb.velocity.x * (1 - ArtificialBrake / 10), rb.velocity.y, rb.velocity.z * (1 - ArtificialBrake / 10));
-
-
+            WColForward.brakeTorque = maxForwardBrake * input.brakeForward;
+            WColBack.brakeTorque = maxBackBrake * input.brakeBack;
+            WColBack.motorTorque = maxMotorTorque * input.acceleration;
+            if (speedVal < highSpeed)
+                rb.AddForce(transform.forward * ArtificialAcceleration * input.acceleration);
+        }
     }
 
     private void updateWheels()
@@ -357,6 +378,7 @@ public class MotorbikeController : MonoBehaviour
             rb.AddTorque(-rb.angularVelocity * 2, ForceMode.Acceleration);
         }
         //Sets Sideways friction with speed gradations
+        
         if (speedVal < 10)
             SetWheelFriction(1.5f);
         else if(speedVal < 20 && speedVal > 10)

@@ -4995,8 +4995,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832390}
-  m_LocalRotation: {x: 0.0015517204, y: 0.9462973, z: -0.3232622, w: 0.0045424034}
-  m_LocalPosition: {x: 0.013639916, y: 2.6391609, z: -1.1562779}
+  m_LocalRotation: {x: 0.00057364575, y: 0.98133844, z: -0.19226553, w: 0.0029279278}
+  m_LocalPosition: {x: 0.009958211, y: 2.5917983, z: 1.2872409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1257927228}
@@ -5514,7 +5514,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175385013}
-  m_LocalRotation: {x: -0.1261075, y: 0.7995535, z: -0.33575535, w: -0.48174626}
+  m_LocalRotation: {x: -0.05991156, y: 0.836745, z: -0.22428882, w: -0.49594656}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31515,7 +31515,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974509881}
-  m_LocalRotation: {x: -0.13482636, y: 0.79333085, z: -0.35020518, w: -0.47937924}
+  m_LocalRotation: {x: -0.06889891, y: 0.83253837, z: -0.23943168, w: -0.49477807}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31929,7 +31929,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1354198675}
-  m_Follow: {fileID: 1354198675}
+  m_Follow: {fileID: 1241097706}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -32019,7 +32019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153096217}
   m_LocalRotation: {x: 0.07481297, y: -0.50136656, z: 0.02773909, w: 0.8615481}
-  m_LocalPosition: {x: 0.013639916, y: 2.6391609, z: -1.1562779}
+  m_LocalPosition: {x: 0.009958211, y: 2.5917983, z: 1.2872409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1433083398}
@@ -51200,8 +51200,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433083396}
-  m_LocalRotation: {x: -0.1435237, y: 0.78682953, z: -0.36457753, w: -0.4768475}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.07788727, y: 0.8280455, z: -0.25453553, w: -0.49344295}
+  m_LocalPosition: {x: 0.00000006654569, y: 0.000000021201867, z: 0.0000001220005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1796719555}
@@ -51402,8 +51402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cinemachineFreeLook: {fileID: 1153096218}
   _outlines:
-  - {fileID: 1390527316}
   - {fileID: 774443717}
+  - {fileID: 1390527316}
   - {fileID: 9184333147827647634}
   - {fileID: 1372481753556396293}
 --- !u!114 &1561699758

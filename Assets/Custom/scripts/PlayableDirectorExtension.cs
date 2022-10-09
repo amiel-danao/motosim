@@ -39,7 +39,7 @@ public class PlayableDirectorExtension : MonoBehaviour
 
     public void SetStartTimeAndPlay(float startTime){
         foreach(var director in _playableDirectors){
-            director.initialTime = startTime;
+            director.time = startTime;
             director.Play();
         }
     }    

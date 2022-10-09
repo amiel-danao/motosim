@@ -18,6 +18,21 @@ EditorBuildSettings:
     path: Assets/Custom/scenes/MotorScene3.unity
     guid: e26b6771815440c4484b9eee2593efb3
   - enabled: 1
+    path: Assets/Custom/scenes/MotorScene4.unity
+    guid: a9953931449658d43ba67b1cec027f2b
+  - enabled: 1
+    path: Assets/Custom/scenes/MotorScene5.unity
+    guid: c51b67b976249ae45afdd2c6eff9ac81
+  - enabled: 1
+    path: Assets/Custom/scenes/MotorScene6.unity
+    guid: e6433c33242e5e14ca190c847783572a
+  - enabled: 1
+    path: Assets/Custom/scenes/MotorScene7.unity
+    guid: 20d7afca3ce9cec479466c1c1237b994
+  - enabled: 1
+    path: Assets/Custom/scenes/MotorScene8.unity
+    guid: c951e136b1f1b8e47b20fd53f77cdcee
+  - enabled: 1
     path: Assets/Custom/scenes/CheckParts.unity
     guid: ad35210ee2f71ad4eafd9583865543f8
   - enabled: 1

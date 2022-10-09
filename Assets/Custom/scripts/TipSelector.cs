@@ -29,7 +29,8 @@ public class TipSelector : MonoBehaviour
         try{
             _allTipsGameObjects[_currentIndex].SetActive(true);
         }
-        catch(System.Exception exception){
+        catch (System.Exception)
+        {
 
         }
         _tipsText.text = _tips[_currentIndex];

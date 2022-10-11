@@ -49,7 +49,7 @@ public class MotorbikeController : MonoBehaviour
 
     private Transform thisTransform;
     public Vector3 com;
-    Rigidbody rb;
+    public Rigidbody rb;
     float startSteerSensitivity;
 
 

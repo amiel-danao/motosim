@@ -17,4 +17,9 @@ public class LevelSelector : MonoBehaviour
 	public void Quit(){
 		Application.Quit();
 	}
+	
+	public void Restart()
+	{		
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 }

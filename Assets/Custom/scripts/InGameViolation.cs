@@ -8,7 +8,7 @@ public class InGameViolation : MonoBehaviour
 {
     private Collider _collider;
     [SerializeField] protected Violation _violation;
-    protected float _nextViolationTimeOffset = 1f;
+    [SerializeField] protected float _nextViolationTimeOffset = 1f;
 
     private void Awake()
     {

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MotorbikeController : MonoBehaviour
 {
-
+    public Road LatestRoad;
     public WheelCollider WColForward;
     public WheelCollider WColBack;
 

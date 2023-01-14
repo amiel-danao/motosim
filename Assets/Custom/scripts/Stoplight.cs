@@ -6,7 +6,7 @@ public class Stoplight : MonoBehaviour
     public GameObject yellowLight;
     public GameObject greenLight;
 
-    private int currentLight = 2;
+    [SerializeField] private int currentLight = 2;
     public float redInterval = 5f; // interval between red light and green light
     public float yellowInterval = 2f; // interval for the yellow light
     public float greenInterval = 6f; // interval for the yellow light

@@ -6,6 +6,8 @@ using UnityEngine;
 public class ViolationDetector : MonoBehaviour
 {
     private List<InGameViolation> _currentTriggers;
+    public Road LatestRoad;
+    public Road LastRoad;
 
     private void Awake()
     {
@@ -47,13 +49,23 @@ public class ViolationDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
+        if (other == LatestRoad.MyCollider)
+        {
+            LastRoad = LatestRoad;
+            LatestRoad = null;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (ViolationUI.Instance.IsShown)
             return;
+
+        if(other.TryGetComponent(out Road road))
+        {
+            LatestRoad = road;
+        }
+
         if (other.TryGetComponent(out InGameViolation inGameViolation))
         {
             inGameViolation.Violate();

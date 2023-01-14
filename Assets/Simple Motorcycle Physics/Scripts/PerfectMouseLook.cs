@@ -10,17 +10,32 @@ public class PerfectMouseLook : MonoBehaviour
     public Vector2 smoothing = new Vector2(3, 3);
     public Vector2 targetDirection;
     public Vector2 targetCharacterDirection;
+    [SerializeField] private Transform motorcycleTransform;
     public bool movement;
+    private bool look = false;
 
     void Start()
     {
+        Input.ResetInputAxes();
         // Set target direction to the camera's initial orientation.
         targetDirection = transform.localRotation.eulerAngles;
+        _mouseAbsolute = Vector2.zero;
+        _smoothMouse = Vector2.zero;
+        movement = false;
+        Invoke(nameof(SetLook), 1f);
+    }
 
+    private void SetLook()
+    {
+        look = true;
     }
 
     void FixedUpdate()
     {
+        if (look == false)
+        {
+            return;
+        }
 
         // Allow the script to clamp based on a desired target value.
         var targetOrientation = Quaternion.Euler(targetDirection);
@@ -38,7 +53,7 @@ public class PerfectMouseLook : MonoBehaviour
 
         // Find the absolute mouse movement value from point zero.
         _mouseAbsolute += _smoothMouse;
-        if(_smoothMouse==new Vector2(0,0))
+        if(_smoothMouse==Vector2.zero)
         {
             targetDirection = transform.localRotation.eulerAngles;
             _mouseAbsolute = new Vector2(0,0);
